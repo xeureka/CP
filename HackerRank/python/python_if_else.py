@@ -1,6 +1,6 @@
 #!/bin/python3
 
-https://www.hackerrank.com/challenges/py-if-else/
+#https://www.hackerrank.com/challenges/py-if-else/
 
 
 import math

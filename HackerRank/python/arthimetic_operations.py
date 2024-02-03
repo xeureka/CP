@@ -1,5 +1,4 @@
-
-https://www.hackerrank.com/challenges/python-arithmetic-operators/
+#https://www.hackerrank.com/challenges/python-arithmetic-operators/
 
 
 if __name__ == '__main__':
