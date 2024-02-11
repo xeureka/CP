@@ -3,11 +3,8 @@
 
 import random
 
-user = []
+user = list(map(int,input('Enter five numbers form the range of 1 to 80: ').split()))
 
-for i in range(5):
-    num = int(input('Enter 5 numbers form the range of 1 to 80: '))
-    user.append(num)
 
 lst = []
 for i in range(10):
