@@ -11,9 +11,14 @@ tasks = []
 
 
 def add_task():
-    task = input('Enter a task:   ')
-    tasks.append(task)
-    print("Task added sucessfully")
+    try:
+        task = input('Enter a task:   ')
+    except ValueError as e:
+        print(e)
+        print("please enter you response in the proper format.")
+    else:
+        tasks.append(task)
+        print("Task added sucessfully")
 
 
 def delete_task():
@@ -24,11 +29,16 @@ def delete_task():
 
         for i ,task in enumerate(tasks):
             print(f'{i+1}. task')
-        task_number = int(input('Enter the task number to delete: '))
+            try:
+                task_number = int(input('Enter the task number to delete: '))
 
-        if task_number > 0 and task_number <= len(tasks):
-            del tasks[task_number -1]
-            print("Task deleted sucessfully")
+            except ValueError as e:
+                print(e)
+                print('Please re enter you response')
+            else:
+                if task_number > 0 and task_number <= len(tasks):
+                    del tasks[task_number -1]
+                    print("Task deleted sucessfully")
         else:
             print("Invalid input")
 
@@ -47,20 +57,23 @@ while True:
     print("3.view task")
     print("4.Quit")
 
+    try:
+        user = int(input("Select a task number :     "))
+    except ValueError as e:
+        print(e)
 
-    user = int(input("Select a task number :     "))
-
-    if user ==1:
-        print()
-        add_task()
-    elif user ==2:
-        print()
-        delete_task()
-    elif user ==3:
-        print("+++++++++++++++++++++++++++++Current runing tasks")
-        task_view()
     else:
-        if user == "4":
-            break
+        if user ==1:
+            print()
+            add_task()
+        elif user ==2:
+            print()
+            delete_task()
+        elif user ==3:
+            print("+++++++++++++++++++++++++++++Current runing tasks")
+            task_view()
         else:
-            print("Invalid input")
+            if user == "4":
+                break
+            else:
+                print("Invalid input")
