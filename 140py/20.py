@@ -1,7 +1,7 @@
-# Write a Python Program to Check Armstrong Number?
+# Write a Python Program to Find Armstrong Number in an Interval.
 
-
-num = input()
+num1 = input()
+num2 = input()
 
 length = len(num)
 
