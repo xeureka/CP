@@ -3,16 +3,10 @@
 
 
 def merge_arrays(lst1,lst2):
-    
-
     com_list = lst1 + lst2
-
     com_list = set(com_list)
-
     com_list = list(com_list)
-
     com_list.sort()
-
     return com_list
 
 
