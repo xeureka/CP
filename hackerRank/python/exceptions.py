@@ -1,10 +1,18 @@
 # https://www.hackerrank.com/challenges/exceptions/problem?isFullScreen=true
 
 
-a = int(input())
-b = int(input())
+
 # Error Code: integer division or modulo by zero
 # Error Code: invalid literal for int() with base 10: '$'
 
-div = a /b
 
+try:
+    a = int(input())
+    b = int(input())
+    result = a / b
+except ZeroDivisionError as e:
+    print(e)
+except ValueError as e:
+    print(e)
+else:
+    print(result)
