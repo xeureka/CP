@@ -1,13 +1,16 @@
+
 name = input('Enter your name:  ')
 
+x = name.rstrip(' ')
 
-name = list(name)
-lst = []
-str1 = ''
+print(x)
 
-for i in name:
-    if type(i) == int:
-        print(i)
-    else:
-        print('no number yet')        
-    
+
+
+
+
+
+
+
+
+
