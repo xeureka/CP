@@ -1,4 +1,5 @@
 
+# https://codeforces.com/problemset/problem/1772/A
 t = int(input())
 
 for i in range(t):
