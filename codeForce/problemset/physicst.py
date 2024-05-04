@@ -2,21 +2,14 @@
 
 n = int(input())
 
-arr1 = list(map(int,input().split()))
-arr2 = list(map(int,input().split()))
-arr3 = list(map(int,input().split()))
-
 new = []
+for i in range(n):
+    lst = list(map(int,input().split()))
 
-cob = tuple(zip(arr1,arr2,arr3))
-x,y,z = cob
-    
-x1 = sum(x)
-y1 = sum(y)
-z1 = sum(z)
+    new.extend(lst)
 
-new = [x1,y1,z1]
-if new == [0,0,0]:
+
+if sum(new) == 0:
     print('YES')
 else:
     print('NO')
