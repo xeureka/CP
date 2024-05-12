@@ -1,1 +1,1 @@
-coding and competative porgramming challenges 
+Competative programming problem challenges.
