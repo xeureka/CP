@@ -6,18 +6,23 @@ n = int(input())
 for i in range(n):
     t = int(input())
 
-    arr1 = input()
-    arr2 = input()
+    word1 = input().lower()
+    word2 = input().lower()
 
-    comb = list(zip(arr1,arr2))
+    word1 = list(word1)
+    word2 = list(word2)
 
+    combined = list(zip(word1,word2))
+
+    nonI = [('r','b'),('b','r'),('r','g'),('g','r')]
     cout = 0
 
-    for i in comb:
-        if 'R' in i:
-            cout +=1
+    for item in combined:
+        if item in nonI:
+            cout += 1
 
-    if cout >=1:
+    if cout >= 1:
         print('NO')
     else:
         print('YES')
+
