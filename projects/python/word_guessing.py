@@ -1,27 +1,25 @@
 
+
 import random
 
-start = ['Ethiopia','Kenya','Sudan','Erteria','Djibuti','Uganda','Rwanda']
+word = ['Red','Green','White','Blue','Purple']
 
-answer = random.choice(start)
+x = random.choice(word)
 
-count = 0
-attempts = 5
-value = False
+try:
+    user_in = input('ENter you guess here:  ')
+except TypeError as e:
+    print(e)
+except ValueError as e:
+    print(e)
+except:
+    print('We encounter some error here')
 
-print("guess an east african country")
-while attempts < 0:
-    user_input = input('Enter your guess:  ').title()
+else:
+    score = 0
+    for i in range(5):
+        if user_in == x:
+            score +=1
+            print('You get correctly')
 
-    count +=1
-    if user_input == answer:
-        print(f'You got the answer is {count} attempts')
-        value = True
-        break
-    else:
-        attempts -=1
-        print(f'Try again you have {attempts} attempts left ')
-
-if value == False:
-    print('You lose, please try again')
-    
+    print(f'You score {score} points')

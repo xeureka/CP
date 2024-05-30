@@ -1,30 +1,24 @@
 
+
 import random
 
+comp_guess = random.randrange(1,10)
 
-answer = random.randint(1,50)
+try:
+    user_guess = int(input('Enter you guess from 1 to 10:   '))
+except TypeError as e:
+    print(e)
+except ValueError as e:
+    print(e)
+
+else:
+    score = 0
+
+    for i in range(5):
+        if user_guess == comp_guess:
+            score +=1
+            print(f'You got the answer correctly')
+    
+    print(f'Horray your score is {score}')
 
 
-print('Welcome to the number guessing game')
-print('- You have 7 tries enjoy the game')
-
-
-user = int(input('Enter 1 to start the game:  '))
-
-if user ==1:
-    count =0
-    value = False
-    while count <=7:
-        user_input = int(input('Guess a number between 1 to 50: '))
-        count +=1
-        if user_input == answer:
-            print(f'Yess, you got the answer in {count} attempts')
-            value = True
-            break
-        else:
-            if answer > user_input:
-                print('Too low try larger number')
-            else:
-                print('Too low try larger number')
-    if value == False:
-        print('You lose the game please return next time.')
