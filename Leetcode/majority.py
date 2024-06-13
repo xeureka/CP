@@ -4,9 +4,7 @@ from collections import Counter
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
+        counter = Counter(nums)
+        most = counter.most_common(1)
 
-        x = Counter(nums)
-        
-        answer, *v = x
-
-        return answer
+        return most[0][0]
