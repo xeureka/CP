@@ -1,1 +1,1 @@
-Competative programming problems,projects and related things.
+Competative programming 
