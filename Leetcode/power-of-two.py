@@ -1,5 +1,4 @@
-# 
-
+# https://leetcode.com/problems/power-of-two/
 
 import math
 class Solution:
