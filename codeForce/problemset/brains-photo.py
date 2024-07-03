@@ -9,11 +9,19 @@ for i in range(n):
     lst.append(pixel)
 
 
-bw = ['B','W']
+BwG = ['B','W','G']
 
-for i in lst:
-    if i not in bw:
-        print('#Color')
-        break
-    else:
-        print('#Black&White')
+value = []
+
+for item in lst:
+    for i in item:
+        if not i in BwG:
+            value.append(0)
+            break
+        else:
+            value.append(1)
+
+if value.count(1) == len(value):
+    print('#Black&White')
+else:
+    print('#Color')
