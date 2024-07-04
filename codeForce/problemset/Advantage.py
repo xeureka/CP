@@ -1,3 +1,6 @@
+
+# https://codeforces.com/contest/1760/problem/C
+
 for i in range(int(input())):
     n = int(input())
 
