@@ -1,14 +1,9 @@
-# Exercise 10: Remove all occurrences of a specific item from a list.
+lst = [5, 20, 15, 20, 25, 50, 20]
 
+# write a program to remove all occurances of item 20
 
-# list1 = list(map(int,input().split()))
+for i in lst:
+    if i == 20:
+        lst.remove(i)
 
-list1 = [5, 20, 15, 20, 25, 50, 20]
-
-
-list1 = set(list1)
-list1 = list(list1)
-list1.sort()
-
-
-print(list1)
+print(lst)
