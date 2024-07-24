@@ -3,17 +3,14 @@
 
 class Solution(object):
     def isCovered(self, ranges, left, right):
-        """
-        :type ranges: List[List[int]]
-        :type left: int
-        :type right: int
-        :rtype: bool
-        """
-        for num in range(left,right + 1):
-            count = 0
-            for s, e in ranges:
-                count = 1
-                break
-        if count ==0 :
-            return False
+        covered_range = set()
+
+        for start,end in ranges:
+            for num in range(start,end + 1):
+                covered_range.add(num)
+
+        for num in range(left,right+1):
+            if num not in covered_range:
+                return False
+            
         return True
