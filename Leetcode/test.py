@@ -1,12 +1,27 @@
-nums = ["777","7","77","77"]
-target = "7777"
 
 
-count = 0
+import copy
 
-for i in range(len(nums)):
-    for j in range(len(nums)):
-        if (i != j) and (nums[i] + nums[j] == target):
-            count += 1
+nums = [-1,1,0,-3,3]
 
-print(count)
+def pro(num):
+    pro = 1
+    for i in num:
+        pro *= i
+
+    return pro
+
+
+nn = pro(nums)
+ans = []
+
+for i in nums:
+    try:
+        val = nn / i
+        ans.append(int(val))
+    except:
+        new = copy.deepcopy(nums)
+        new.remove(i)
+        ans.append(pro(new))
+
+print(ans)
