@@ -1,27 +1,24 @@
+nums = [10,4,8,3]
 
 
-import copy
+def leftSum(num):
+    ans = []
 
-nums = [-1,1,0,-3,3]
-
-def pro(num):
-    pro = 1
     for i in num:
-        pro *= i
+        try:
+            i = num.index(i) + 1
+            val = num[i:]
+            ans.append(sum(val))
+        except:
+            ans.append(0)
 
-    return pro
+    return ans
 
 
-nn = pro(nums)
-ans = []
+def rightSum(num):
+    pass
 
-for i in nums:
-    try:
-        val = nn / i
-        ans.append(int(val))
-    except:
-        new = copy.deepcopy(nums)
-        new.remove(i)
-        ans.append(pro(new))
 
-print(ans)
+    
+
+
