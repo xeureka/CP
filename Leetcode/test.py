@@ -1,12 +1,16 @@
-matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]]
-target = 3
+nums = [1,2,3,4]
 
 
-lst = []
+ans = []
 
-for i in matrix:
-    for j in i:
-        if i == target:
-            
+sum = nums[0]
 
+for i in range(len(nums)):
+    if i == 0:
+        ans.append(sum)
+    else:
+        sum += nums[i]
+        ans.append(sum)
 
+print(ans)
+    
