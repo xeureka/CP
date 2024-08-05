@@ -14,8 +14,5 @@ class Solution:
                 ans.append(sum)
 
         return ans
-    
-    
-
 
         

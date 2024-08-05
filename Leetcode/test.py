@@ -1,16 +1,12 @@
-nums = [1,2,3,4]
+nums = ["777","7","77","77"]
+target = "7777"
 
 
-ans = []
-
-sum = nums[0]
+count = 0
 
 for i in range(len(nums)):
-    if i == 0:
-        ans.append(sum)
-    else:
-        sum += nums[i]
-        ans.append(sum)
+    for j in range(len(nums)):
+        if (i != j) and (nums[i] + nums[j] == target):
+            count += 1
 
-print(ans)
-    
+print(count)
