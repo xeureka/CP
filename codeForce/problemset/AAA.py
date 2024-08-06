@@ -1,13 +1,4 @@
-# for i in range(int(input())):
-#     n = input()
 
-#     sum = 0
-
-#     for i in n:
-#         sum += int(i)
-#     print(sum)
-
-# problem 2 starts here
 
 for i in range(int(input())):
     lst = list(map(int,input().split()))
