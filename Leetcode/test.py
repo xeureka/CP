@@ -1,32 +1,19 @@
+# https://leetcode.com/problems/valid-palindrome/
 
 
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
 
-s = "ab##"
-t = "c#d#"
+        new = ''
 
-def remover(word):
-    word = list(word)
-    n= len(word)
+        for i in s:
+            if i.isalnum():
+                new += i
 
-    for i in range(n):
-        try:
-            if word[i] == '#':
+        new  = new.lower()
 
-                word.remove(word[i-1])
-        except:
-            continue
-
-
-    ans = ''
-
-    for i in word:
-        if i != '#':
-            ans += i
-
-    return ans
-
-
-print(remover(s))
-
-
-
+        if new == new[::-1]:
+            return True
+        else:
+            return False
+        
