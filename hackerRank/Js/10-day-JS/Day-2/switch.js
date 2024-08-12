@@ -1,3 +1,7 @@
+function getLetter(s) {
+    let letter;
+
+
 switch (s.charAt(0)){
     case ('a' || 'e' || 'i' || 'o' ||'u'):
         letter = 'A';
@@ -13,4 +17,6 @@ switch (s.charAt(0)){
         break
 
 }
-  
+    
+    return letter;
+}
