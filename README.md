@@ -1,1 +1,1 @@
-Competative programming 
+MY Competative programming Solutions 
