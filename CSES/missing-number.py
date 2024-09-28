@@ -1,16 +1,12 @@
 # https://cses.fi/problemset/task/1083
 
-def missingNumber(nums):
-    n = len(nums)
-
-    s = set(nums)
-
-    for num in range(n+1):
-        if num not in s:
-            return num
+def missNum(num,n):
+    
+    for i in range(1,n+1):
+        if i not in num:
+            return i
         
-
 n = int(input())
-nums = list(map(int,input().split()))
+lst = set(map(int,input().split()))
 
-missingNumber(nums)
+print(missNum(lst,n))
