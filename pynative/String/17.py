@@ -7,4 +7,8 @@ new = str1.split()
 ans = []
 
 for i in new:
-    for j in i:
+    if any(char.isalpha() for char in i) and any(char.isdigit() for char in i):
+        ans.append(i)
+
+for i in ans:
+    print(i)
