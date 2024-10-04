@@ -1,5 +1,13 @@
-nums = [-4,-1,0,3,10]
+words = ["bella","label","roller"]
 
+words = tuple(words)
 
-ans = sorted(map(lambda x:x**2,nums))
+first,*rest = words
+ans = []
+
+for i in first:
+    for j in rest:
+        if i in j:
+            ans.append(i)
+
 print(ans)
