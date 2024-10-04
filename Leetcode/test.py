@@ -1,12 +1,5 @@
-nums = [-4,-2,1,4,8]
+nums = [-4,-1,0,3,10]
 
-ans = nums[0]
 
-for x in nums:
-    if abs(x) < abs(ans):
-        ans = x
-
-if ans < 0 and abs(ans) in nums:
-    print(abs(ans))
-else:
-    print(ans)
+ans = sorted(map(lambda x:x**2,nums))
+print(ans)
