@@ -1,13 +1,13 @@
-nums = [5,20,66,1314]
-pos = 0
-neg = 0
+nums = [9]
+
+fake = ''
 
 for i in nums:
-    if i < 0:
-        neg += 1
-    elif i > 0:
-        pos += 1
-    
+    i = str(i)
+    fake += i
+
+new  = int(fake) + 1
 
 
-print(max(pos,neg))
+ans = [int (i) for i in str(new)]
+print(ans)
