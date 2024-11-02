@@ -1,24 +1,36 @@
- class Car{
-    constructor(brand){
-        this.carName = brand;
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
     }
+}
 
-    present(){
-        return 'I have a '+ this.carName
+
+
+/*
+ *  Write code that adds an 'area' method to the Rectangle class' prototype
+ */
+
+Rectangle.prototype.area = function(){
+    return this.w * this.h
+}
+
+/*
+ * Create a Square class that inherits from Rectangle and implement its class constructor
+ */
+class Square extends Rectangle{
+    constructor(a){
+        super(a,a)
     }
- }
+}
 
-
- class Model extends Car{
-    constructor(brand,mod){
-        super(brand)
-        this.model = mod;
-    }
-
-    show(){
-        return this.present() + ', it is a ' + this.model;
-    }
- }
-
- let myCar = new Model('Ford','Mustang')
- console.log(myCar.show())
+if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+    const rec = new Rectangle(3, 4);
+    const sqr = new Square(3);
+    
+    console.log(rec.area());
+    console.log(sqr.area());
+} else {
+    console.log(-1);
+    console.log(-1);
+}
