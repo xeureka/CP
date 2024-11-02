@@ -36,11 +36,11 @@ function calcAreaPerim(a,p){
 
     let disc = Math.sqrt((p*p) - (16*a))
 
-    let s1 = p + disc;
-    let s2 = p - disc;
+    let s1 = (p + disc) / 4.0;
+    let s2 = (p - disc) /4.0;
 
-    result.push(s1 /4.0)
-    result.push(s2/4.0)
+    result.push(s1)
+    result.push(s2)
 
     result.sort(function(a,b){
         return a - b
