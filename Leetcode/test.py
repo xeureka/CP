@@ -1,13 +1,13 @@
-nums = [9]
+from collections import Counter
 
-fake = ''
+nums = [1,1,1,2,2,3]
+k = 2
 
-for i in nums:
-    i = str(i)
-    fake += i
+lst = []
 
-new  = int(fake) + 1
+nums = list(set(nums))
 
+nums.sort(reverse = True)
 
-ans = [int (i) for i in str(new)]
-print(ans)
+print(nums[:k])
+
