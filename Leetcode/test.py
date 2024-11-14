@@ -1,13 +1,19 @@
 from collections import Counter
+from math import ceil
 
-nums = [1,1,1,2,2,3]
-k = 2
 
-lst = []
+nums = [1]
 
-nums = list(set(nums))
 
-nums.sort(reverse = True)
+b = len(nums) // 3
 
-print(nums[:k])
+nums_count = Counter(nums).most_common()
 
+ans = []
+
+
+for item in nums_count:
+    if item[1] > b:
+        ans.append(item[0])
+
+print(ans)
