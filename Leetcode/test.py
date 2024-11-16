@@ -1,22 +1,20 @@
-nums = [1, 2, 3, 4, 6]
-target = 10
+nums = [-4,-1,0,3,10]
 
-# two pointer method
 
-def two_sum(nums,target):
+def solution(nums:list):
     left,right = 0,len(nums) - 1
+    result = []
 
-    while left < right:
-        current_sum = nums[left] + nums[right]
-
-        if current_sum == target:
-            return (nums[left] ,nums[right])
-        elif current_sum < target:
+    while left <= right:
+        if abs(nums[left]) > abs(nums[right]):
+            result.append(nums[left] ** 2)
             left += 1
         else:
+            result.append(nums[right] ** 2)
             right -= 1
+
+    result.reverse()
+    return result 
     
-    return None
 
-
-print(two_sum(nums,target))
+print(solution(nums))
