@@ -1,9 +1,22 @@
-from collections import Counter
+nums = [1, 2, 3, 4, 6]
+target = 10
 
-nums = [2,2,1]
+# two pointer method
 
-number = Counter(nums)
+def two_sum(nums,target):
+    left,right = 0,len(nums) - 1
 
-for i,j in number.items():
-    if j == 1:
-        print(i)
+    while left < right:
+        current_sum = nums[left] + nums[right]
+
+        if current_sum == target:
+            return (nums[left] ,nums[right])
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    
+    return None
+
+
+print(two_sum(nums,target))
