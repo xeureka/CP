@@ -1,21 +1,36 @@
-numbers = [2,7,11,15]
 
-target = 9
+nums = [1,2,3,4,5]
 
-def solution(numbers:list,target:int):
-    left,right = 0,len(numbers) - 1
+nums2= [6,5,4,2,1]
 
-    while left <= right:
-        current_sum = numbers[left] + numbers[right]
+nums3 = [1,3,2]
 
-        if current_sum == target:
-            return [left+1,right+1]
-        
-        elif current_sum < target:
+
+def up_mono(nums:list):
+    left,right = 0,1
+    count = 0
+
+    while right <= len(nums)-1:
+        if (nums[left] <= nums[right]):
             left += 1
+            right += 1
 
         else:
-            right -= 1
+            return False
+    return True
 
+def down_mono(nums:list):
+    left,right = 0,1
 
-print(solution(numbers,target))
+    while right <= len(nums) - 1:
+        if nums[left] >= nums[right]:
+            left += 1
+            right += 1
+        else:
+            return False
+    return True
+
+if up_mono(nums3) or down_mono(nums3):
+    print(True)
+else:
+    print(False)
