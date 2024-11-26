@@ -3,17 +3,21 @@
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-
-        new = ''
+        word = []
 
         for i in s:
             if i.isalnum():
-                new += i
+                word.append(i.lower())
+            
+        left,right = 0,len(word) - 1
 
-        new  = new.lower()
-
-        if new == new[::-1]:
-            return True
-        else:
-            return False
+        while left <= right:
+            if word[left] != word[right]:
+                return False
+            else:
+                left += 1
+                right -= 1
+        
+        return True
+        
         
