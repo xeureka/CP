@@ -1,27 +1,18 @@
-# valid palindrom
-
-# all upper case to lowercase
-# remove all non alphanumberic characters
+nums = [1,2,3,4]
 
 
-s = " "
+def solution(nums:list) -> list:
+    total_sum = 1
 
-def solutioin(s:str):
-    word = []
+    for i in nums:
+        total_sum *= i
 
-    for i in s:
-        if i.isalnum():
-            word.append(i.lower())
+    result = []
+
+    for i in nums:
+        result.append(int(total_sum / i))
     
-    left,right = 0,len(word) - 1
+    return result
 
-    while left <= right:
-        if word[left] != word[right]:
-            return False
-        else:
-            left += 1
-            right -= 1
-
-    return True
-              
-print(solutioin(s))
+print(solution(nums))
+        
