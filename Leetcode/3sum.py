@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/3sum/
+
+
 class Solution:
   def threeSum(self, nums: list[int]) -> list[list[int]]:
     if len(nums) < 3:
@@ -10,8 +13,7 @@ class Solution:
     for i in range(len(nums) - 2):
       if i > 0 and nums[i] == nums[i - 1]:
         continue
-      # Choose nums[i] as the first number in the triplet, then search the
-      # remaining numbers in [i + 1, n - 1].
+
       l = i + 1
       r = len(nums) - 1
       while l < r:
