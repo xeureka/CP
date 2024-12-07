@@ -1,15 +1,28 @@
-s = 'egg'
-t = 'add'
+s = "Test1ng-Leet=code-Q!"
 
-def solution(s,t):
-    if len(s) != len(t):
-        return False
-    sStack,tStack = [],[]
+def solu(s:str):
+    s = list(s)
 
-    for i in range(len(s)):
-        sStack.append(s.index(s[i]))
-        tStack.append(t.index(t[i]))
+    left,right = 0,len(s) -1
+
+    while left <= right:
+         
+        if s[left].isalpha() and s[right].isalpha():
+            s[left],s[right] = s[right],s[left]
+            left += 1
+            right -= 1
+        
+        elif s[left].isalpha() == False:
+            left += 1
+        
+        else:
+            right -= 1
     
-    return sStack == tStack
+    return ''.join(s)
 
-print(solution(s,t))
+        
+
+
+print(solu(s))
+
+

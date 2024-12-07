@@ -11,6 +11,7 @@ class Solution:
 
             for i in range(len(s)):
                 sStack.append(s.index(s[i]))
+                
                 tStack.append(t.index(t[i]))
             
             return sStack == tStack
