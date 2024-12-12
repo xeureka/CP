@@ -1,34 +1,15 @@
-from collections import deque
+nums = [3,2,2,3]
+val = 3
 
-# creating zip of closing -> opening char  == completed
-
-# iterate over s and append opening to the stack
-# if i is closing and if stack[-1] and i in zip stack.pop()
-# else return False
-# if not stack return True else return False
-
-s = "([])"
-
-
-def solution(s:str) ->bool:
-    stack = deque()
-
+def sol(nums,val):
     
-    combined = {')':'(',
-                '}':'{',
-                ']':'['}
-    for char in s:
-        if not char in combined:
-            stack.append(char)
-        
-        elif (char in combined) and (combined[char] == stack[-1]):
-            stack.pop()
-        else:
-            return False
+    l = 0
+
+    for i in range(len(nums)):
+
+        if nums[i] != val:
+            nums[l],nums[i] = nums[i],nums[l]
+            l += 1
     
-    return not stack
 
-
-print(solution(s))
-        
-        
+    return i
