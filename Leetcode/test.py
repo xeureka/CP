@@ -1,35 +1,21 @@
+nums = [-10,8,6,7,-2,-3]
 
-
-s = "leetcode"
-
-# convert the string to list
-# declare list containing vowels
-# declare right and left pointer
-# is both left and right are in vowel swap their value
-#  is left not inc left
-# else inc right
-
-def solu(s:str) -> str:
-    s = list(s)
-
-    left,right = 0,len(s) -1
-
-    vow = ['a', 'e', 'i', 'o', 'u']
-
-    while left <= right:
-        if (s[left].lower() in vow) and (s[right].lower() in vow):
-            s[left],s[right] = s[right],s[left]
-            left += 1
-            right -= 1
-        
-        elif not s[left].lower() in vow:
-            left += 1
-        
-        else:
-            right -= 1
+def solut(nums:list) -> int:
+    if max(nums) and -max(nums) in nums:
+        return max(nums)
     
-    return ''.join(s)
-  
+    num = []
+    
+    for i in nums:
+        if -i in nums:
+            num.append(i)
+    
+    if len(num) > 0:
+        return max(num)
+    
+    return -1
 
 
-print(solu(s))
+
+
+print(solut(nums))
