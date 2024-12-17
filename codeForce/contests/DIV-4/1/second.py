@@ -1,3 +1,5 @@
-# https://codeforces.com/contest/1985/problem/B
+s = "egg"
 
-num = int(input())
+t = "add"
+
+def solu(
