@@ -1,21 +1,36 @@
-nums = [-10,8,6,7,-2,-3]
 
-def solut(nums:list) -> int:
-    if max(nums) and -max(nums) in nums:
-        return max(nums)
+
+# input = two sorted arrays of integers
+# output = the merged array
+
+
+nums1 = [1,3,15]
+nums2 = [1,3,9,15,20]
+
+def solu(nums1:list,nums2:list):
+    left,right = 0,0
+    result = []
+
+    while left < len(nums1) and right < len(nums2):
+        if nums1[left] <= nums2[right]:
+            result.append(nums1[left])
+            left += 1
+        else:
+            result.append(nums2[right])
+            right += 1
     
-    num = []
+    while left < len(nums1):
+        result.append(nums1[left])
+        left += 1
     
-    for i in nums:
-        if -i in nums:
-            num.append(i)
+    while right < len(nums2):
+        result.append(nums2[right])
+        right += 1
     
-    if len(num) > 0:
-        return max(num)
+
+    return result
     
-    return -1
 
 
 
-
-print(solut(nums))
+print(solu(nums1,nums2))
